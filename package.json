@@ -1,6 +1,7 @@
 {
   "name": "lucky-draw",
   "version": "0.1.0",
+  "homepage": "https://en-qian.github.io/lucky-draw",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
@@ -31,7 +32,6 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "kill": "taskkill /f /im node.exe",
-    "homepage": "https://en-qian.github.io/lucky-draw",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
