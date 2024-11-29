@@ -12,6 +12,7 @@ function App() {
       <ToastContainer position={'top-center'} autoClose={1500} />
       <Routes>
         <Route path="/" element={<LuckyDraw />}></Route>
+        <Route path="/lucky-draw" element={<LuckyDraw />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
