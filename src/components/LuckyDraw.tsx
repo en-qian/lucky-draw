@@ -78,23 +78,33 @@ const LuckyDraw = () => {
                       {winner}
                     </div>
                   ))}
-
-                  {participants.length <= 1 ? (
-                    <div className="roll-button">
-                      <span
-                        className="re-roll"
-                        onClick={() => {
-                          setParticipants([...participants, ...poolWinners]);
-                          setPoolWinners([]);
-                        }}
-                      >
-                        Re-Roll
-                      </span>
-                    </div>
-                  ) : (
-                    ''
-                  )}
                 </div>
+
+                {participants.length <= 1 ? (
+                  <div className="roll-button">
+                    <span
+                      className="re-roll"
+                      onClick={() => {
+                        setParticipants([...participants, ...poolWinners]);
+                        setPoolWinners([]);
+                      }}
+                    >
+                      Re-Roll
+                    </span>
+                  </div>
+                ) : (
+                  ''
+                )}
+              </div>
+            ) : (
+              ''
+            )}
+
+            {winner.length > 0 ? (
+              <div className="result-container">
+                <p className="result-winner">
+                  Winner: <span>{winner}</span>
+                </p>
               </div>
             ) : (
               ''
@@ -115,6 +125,8 @@ const LuckyDraw = () => {
 
                     setParticipants(filtered);
                     setHistories([...histories, winner]);
+
+                    toast.success(`Winner: ${winner}`);
                   }}
                 >
                   Roll
@@ -124,21 +136,23 @@ const LuckyDraw = () => {
                   onClick={() => {
                     setParticipants([...participants, ...poolWinners]);
                     setPoolWinners([]);
+                    setWinner('');
                   }}
                 >
                   Re-Roll
                 </span>
-              </div>
 
-              {winner.length > 0 ? (
-                <div className="result-container">
-                  <p className="result-winner">
-                    Winner: <span>{winner}</span>
-                  </p>
-                </div>
-              ) : (
-                ''
-              )}
+                <span
+                  className="clear-button"
+                  onClick={() => {
+                    setParticipants([]);
+                    setPoolWinners([]);
+                    setWinner('');
+                  }}
+                >
+                  Clear
+                </span>
+              </div>
             </>
           ) : (
             ''
