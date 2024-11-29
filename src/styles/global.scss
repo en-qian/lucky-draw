@@ -106,3 +106,11 @@ body .Toastify__close-button--light {
   align-items: center;
   align-self: center;
 }
+
+@media (max-width: $mobileWidth) {
+  body .Toastify__toast-container {
+    width: calc(100vw - 40px);
+    left: 50%;
+    transform: translateX((-50%));
+  }
+}

@@ -40,6 +40,7 @@ const LuckyDraw = () => {
                 value={participant}
                 onChange={e => setParticipant(e.target.value)}
                 placeholder="Enter participant..."
+                required
               />
               <button value={'submit'}>Insert</button>
             </form>
