@@ -16,11 +16,6 @@ module.exports = function override(config) {
 
   config.resolve.modules = [path.resolve(__dirname, 'src'), 'node_modules'];
 
-  config.output = {
-    ...config.output,
-    path: path.resolve(__dirname, 'dist'),
-  };
-
   config.devtool = false;
 
   return config;
