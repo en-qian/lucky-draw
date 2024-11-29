@@ -3,3 +3,7 @@ export const getRandomValue = <T>(array: T[]) => {
 
   return array[index];
 };
+
+export const removeDuplicateValue = <T>(array: T[]) => {
+  return [...new Set(array)];
+};
