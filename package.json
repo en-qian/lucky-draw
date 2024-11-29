@@ -55,6 +55,7 @@
     "@types/axios": "^0.14.4",
     "@types/crypto-js": "^4.2.2",
     "@types/react-router-dom": "^5.3.3",
+    "gh-pages": "^6.2.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.80.4",
     "sass-loader": "^16.0.2"
