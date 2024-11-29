@@ -1,5 +1,5 @@
 import * as utils from '@utils';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import '@styles/lucky-draw.scss';
 import { toast } from 'react-toastify';
 
@@ -19,6 +19,13 @@ const LuckyDraw = () => {
     setParticipants(utils.removeDuplicateValue([...participants, participant]));
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    handleInsert(participant);
+    setParticipant('');
+  };
+
   return (
     <div className="lucky-draw" style={{ padding: '20px' }}>
       <div className="container">
@@ -27,19 +34,14 @@ const LuckyDraw = () => {
         <div className="lucky-draw-wrapper">
           <div className="insert-participant-wrapper">
             <p>Insert Participant</p>
-            <form className="insert-form" onSubmit={e => e.preventDefault()}>
+            <form className="insert-form" onSubmit={handleSubmit}>
               <input
                 type="text"
                 value={participant}
                 onChange={e => setParticipant(e.target.value)}
                 placeholder="Enter participant..."
               />
-              <button
-                value={'submit'}
-                onClick={() => handleInsert(participant)}
-              >
-                Insert
-              </button>
+              <button value={'submit'}>Insert</button>
             </form>
           </div>
 
