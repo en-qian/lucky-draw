@@ -82,6 +82,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .participants-container h2 {
@@ -198,24 +199,34 @@ html {
   margin-left: 10px;
 }
 
+.roll-button span.clear-button {
+  background-color: var(--red);
+  margin-left: 10px;
+}
+
 .roll-button span:hover,
 .clear-history span:hover {
-  background-color: var(--green);
+  background-color: var(--lightRed);
 }
 
 .roll-button span.re-roll:hover {
   background-color: #04bade;
 }
 
+.roll-button span.clear-button:hover {
+  background-color: var(--lightOrange);
+}
+
 .result-container {
   margin-top: 20px;
+  width: 100%;
 }
 
 .result-container p {
   margin: 0;
-  font-size: var(--p1-font-size);
+  font-size: var(--h3-font-size);
   font-weight: var(--p1-font-weight);
-  line-height: var(--p1-line-height);
+  line-height: var(--h3-line-height);
 }
 
 .result-container p span {
