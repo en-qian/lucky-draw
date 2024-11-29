@@ -10,19 +10,15 @@ const LuckyDraw = () => {
   const [poolWinners, setPoolWinners] = useState<string[]>([]);
   const [histories, setHistories] = useState<string[]>([]);
 
-  const handleInsert = (participant: string) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     if (participants.includes(participant)) {
       toast.error(`${participant} exists!`);
       return;
     }
 
     setParticipants(utils.removeDuplicateValue([...participants, participant]));
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    handleInsert(participant);
     setParticipant('');
   };
 
