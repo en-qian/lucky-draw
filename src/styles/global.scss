@@ -57,6 +57,7 @@ $mobileWidth: 767px;
 
 body {
   margin: 0;
+  color: var(--black);
 }
 
 div {
@@ -64,7 +65,6 @@ div {
 }
 
 .container {
-  max-width: 1140px;
   margin: 0 auto;
 }
 
