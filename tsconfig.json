@@ -28,6 +28,7 @@
       "@pages/*": ["./pages/*"],
       "@styles/*": ["./styles/*"],
       "@types/*": ["./types/*"],
+      "@utils": ["./utils"],
       "@utils/*": ["./utils/*"]
     }
   },
