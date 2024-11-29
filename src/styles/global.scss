@@ -2,40 +2,51 @@
 $tabletWidth: 1180px;
 $mobileWidth: 767px;
 
-// Font
-$h1-font-size: 25px;
-$h1-font-weight: bold;
-$h1-line-height: 1em;
+:root {
+  --h1-font-size: 25px;
+  --h1-font-weight: bold;
+  --h1-line-height: 1em;
 
-$h2-font-size: 20px;
-$h2-font-weight: bold;
-$h2-line-height: 1.2em;
+  --h2-font-size: 20px;
+  --h2-font-weight: bold;
+  --h2-line-height: 1.2em;
 
-$h3-font-size: 17px;
-$h3-font-weight: 600;
-$h3-line-height: 1.2em;
+  --h3-font-size: 17px;
+  --h3-font-weight: 600;
+  --h3-line-height: 1.2em;
 
-$p1-font-size: 14px;
-$p1-font-weight: 400;
-$p1-line-height: 1.5em;
+  --p1-font-size: 14px;
+  --p1-font-weight: 400;
+  --p1-line-height: 1.5em;
 
-$button-font-size: 13px;
-$button-font-weight: 500;
-$button-line-height: 1em;
+  --button-font-size: 13px;
+  --button-font-weight: 500;
+  --button-line-height: 1em;
 
-// Global Color
-$black: #151515;
-$white: #ffffff;
-$grey: #808080;
-$lightGrey: #f4f7fc;
-$lightPurple: #e6effc;
-$red: #ff4040;
-$lightRed: #ff8080;
-$orange: #ffb64d;
-$lightOrange: #ffcb80;
-$lightGreen: #21e6df;
+  // Global Color
+  --black: #151515;
+  --white: #ffffff;
+  --grey: #808080;
+  --lightGrey: #f4f7fc;
+  --lightPurple: #e6effc;
+  --red: #ff4040;
+  --lightRed: #ff8080;
+  --orange: #ffb64d;
+  --lightOrange: #ffcb80;
+  --darkGreen: #23aeba;
+  --green: #53d8b9;
+  --lightGreen: #21e6df;
 
-$boxShadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  --boxShadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: $mobileWidth) {
+  :root {
+    --h1-font-size: 20px;
+    --h2-font-size: 18px;
+    --h3-font-size: 16px;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -94,12 +105,4 @@ body .Toastify__close-button--light {
   display: flex;
   align-items: center;
   align-self: center;
-}
-
-@media (max-width: $mobileWidth) {
-  $h1-font-size: 20px;
-
-  $h2-font-size: 18px;
-
-  $h3-font-size: 16px;
 }
