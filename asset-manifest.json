@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/lucky-draw/static/css/main.322f7543.css",
-    "main.js": "/lucky-draw/static/js/main.bc880728.js",
+    "main.css": "/lucky-draw/static/css/main.f821434e.css",
+    "main.js": "/lucky-draw/static/js/main.d1973452.js",
     "static/js/206.74992304.chunk.js": "/lucky-draw/static/js/206.74992304.chunk.js",
     "index.html": "/lucky-draw/index.html"
   },
   "entrypoints": [
-    "static/css/main.322f7543.css",
-    "static/js/main.bc880728.js"
+    "static/css/main.f821434e.css",
+    "static/js/main.d1973452.js"
   ]
 }
