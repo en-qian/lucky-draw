@@ -9,6 +9,7 @@ const LuckyDraw = () => {
   const [winner, setWinner] = useState('');
   const [poolWinners, setPoolWinners] = useState<string[]>([]);
   const [histories, setHistories] = useState<string[]>([]);
+  const [removeOnWin, setRemoveOnWin] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,6 +45,16 @@ const LuckyDraw = () => {
 
           <div className="participants-container">
             <h2>Participants</h2>
+            <div className="remove-on-clear">
+              <label>
+                Remove on win?
+                <input
+                  type="checkbox"
+                  checked={removeOnWin}
+                  onChange={() => setRemoveOnWin(!removeOnWin)}
+                />
+              </label>
+            </div>
             <div className="participants">
               {participants.length > 0 ? (
                 participants.map((participant, index) => (
@@ -117,13 +128,15 @@ const LuckyDraw = () => {
                   onClick={() => {
                     const winner = utils.getRandomValue(participants)!;
 
-                    setWinner(winner);
-                    setPoolWinners([...poolWinners, winner]);
-
                     const filtered = participants.filter(p => p !== winner);
 
-                    setParticipants(filtered);
+                    setWinner(winner);
                     setHistories([...histories, winner]);
+
+                    if (removeOnWin) {
+                      setPoolWinners([...poolWinners, winner]);
+                      setParticipants(filtered);
+                    }
 
                     toast.success(`Winner: ${winner}`);
                   }}

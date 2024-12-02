@@ -278,6 +278,31 @@ html {
   background-color: #f8f8f9;
 }
 
+.remove-on-clear {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.remove-on-clear ::selection {
+  background-color: transparent;
+}
+
+.remove-on-clear label {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: max-content;
+  font-size: var(--p1-font-size);
+  font-weight: var(--p1-font-weight);
+  line-height: 1em;
+  cursor: pointer;
+}
+
+.remove-on-clear input {
+  margin: 0 10px 0 0;
+  cursor: inherit;
+}
+
 @media (max-width: $tabletWidth) {
   .participants-container .participants,
   .current-pool-winners-container {
