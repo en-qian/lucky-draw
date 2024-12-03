@@ -23,6 +23,22 @@ const LuckyDraw = () => {
     setParticipant('');
   };
 
+  const handleRoll = () => {
+    const winner = utils.getRandomValue(participants)!;
+
+    const filtered = participants.filter(p => p !== winner);
+
+    setWinner(winner);
+    setHistories([...histories, winner]);
+
+    if (removeOnWin) {
+      setPoolWinners([...poolWinners, winner]);
+      setParticipants(filtered);
+    }
+
+    toast.success(`Winner: ${winner}`);
+  };
+
   return (
     <div className="lucky-draw" style={{ padding: '20px' }}>
       <div className="container">
@@ -124,25 +140,7 @@ const LuckyDraw = () => {
           {participants.length > 1 ? (
             <>
               <div className="roll-button">
-                <span
-                  onClick={() => {
-                    const winner = utils.getRandomValue(participants)!;
-
-                    const filtered = participants.filter(p => p !== winner);
-
-                    setWinner(winner);
-                    setHistories([...histories, winner]);
-
-                    if (removeOnWin) {
-                      setPoolWinners([...poolWinners, winner]);
-                      setParticipants(filtered);
-                    }
-
-                    toast.success(`Winner: ${winner}`);
-                  }}
-                >
-                  Roll
-                </span>
+                <span onClick={handleRoll}>Roll</span>
                 <span
                   className="re-roll"
                   onClick={() => {
