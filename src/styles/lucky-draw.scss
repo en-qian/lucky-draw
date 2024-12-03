@@ -344,3 +344,13 @@ html {
     border-radius: 10px;
   }
 }
+
+@media (max-width: 380px) {
+  .roll-button {
+    flex-wrap: wrap;
+  }
+
+  .roll-button span {
+    margin-bottom: 10px;
+  }
+}
